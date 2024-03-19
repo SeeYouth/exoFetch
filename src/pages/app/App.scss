@@ -1,0 +1,84 @@
+.cardWeather {
+  width: 300px;
+  height: 250px;
+  color: black;
+  border: 3px solid $main-text-color-dark;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h2 {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2em;
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+article {
+  margin: 20px 5px;
+  width: calc(50% - 16px);
+
+  h3 {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 700;
+  }
+
+  h4 {
+    color: white;
+    font-size: 1em;
+    font-weight: 700;
+  }
+
+  h3,
+  h4 {
+    padding-left: 10px;
+  }
+
+  p {
+    color: $main-text-color-dark;
+    padding: 10px 20px;
+    span {
+      color: white;
+    }
+  }
+  a {
+    font-weight: bold;
+    color: white;
+  }
+}
+
+.dayWeather {
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.description {
+  font-size: 1.5em;
+  text-transform: capitalize;
+}
+
+.important {
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  border: 1px solid red;
+  padding: 8px 20px;
+  margin: 20px 30px;
+  line-height: 1.5em;
+}

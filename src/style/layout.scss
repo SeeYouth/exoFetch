@@ -1,0 +1,37 @@
+//---- COLOR ----//
+
+a,
+a:visited,
+h1 {
+  color: $main-text-color-dark;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: $main-bg-color-dark;
+}
+
+h1 {
+  font-size: 3em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 40px 0;
+}
+
+main {
+  width: 100%;
+
+  .apiLink {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    color: white;
+  }
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
