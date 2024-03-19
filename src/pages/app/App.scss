@@ -29,16 +29,27 @@ article {
   margin: 20px 5px;
   width: calc(50% - 16px);
 
+  h2,
   h3 {
     color: white;
-    font-size: 1.2em;
     font-weight: 700;
+  }
+
+  h2 {
+    padding: 30px;
+    font-size: 2em;
+  }
+
+  h3 {
+    padding-top: 15px;
+    font-size: 1.2em;
   }
 
   h4 {
     color: white;
     font-size: 1em;
     font-weight: 700;
+    margin-top: 10px;
   }
 
   h3,

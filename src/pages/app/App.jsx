@@ -58,45 +58,85 @@ const App = () => {
         <section>
           <article>
             <div>
+              <h2>Fontionnement de l'api Open Weather</h2>
+              <p>
+                Le lien vers la{" "}
+                <a href="https://openweathermap.org/api/one-call-3">doc</a> de
+                l'api que j'ai utilisé.
+              </p>
               <h3>Le lien vers l'api : </h3>
               <p>{url}</p>
-              <h4>Base du lien</h4>
-              <p>https://api.openweathermap.org/data/2.5/weather?</p>
-              <h4>
+              <h4>https://api.openweathermap.org/data/2.5/weather?</h4>
+              <p>Base du lien</p>
+              <h4>q=bordeaux</h4>
+              <p>
                 Premier paramètre qui définis quelle ville est défini. <br />
-              </h4>
-              <p>q=bordeaux</p>
-              <h4>Ce qui permet d'avoir la température en Celsius</h4>
-              <p>units=metric</p>
-              <h4>Ce qui permet d'avoir la description en français</h4>
-              <p>lang=fr</p>
-              <h4>
-                Open Weather requière une clé api pour pouvoir être utilisé
-              </h4>
-              <p>appid={apiKey}</p>
+              </p>
+              <p>
+                <span>{weatherData.name}</span> est le nom de la ville que l'on
+                a récupérer avec fetch grâce à <span>"weatherData.name"</span>
+              </p>
+              <h4>units=metric</h4>
+              <p>Ce qui permet d'avoir la température en Celsius</p>
+              <p>
+                <span>{weatherData.main.temp}°C</span> est la température que
+                l'on a récupérer grâce à <span>"weatherData.main.temp"</span>.{" "}
+                <br /> Mais il a fallu que l'on change un paramètre dans le lien
+                vers l'api pour avoir la bonne formulation et des celsius.{" "}
+                <br />
+                Comme indiqué au-dessus avec <span>"units"</span> <br />
+                Pour cela la
+                <a href="https://openweathermap.org/api/one-call-3"> doc</a>,
+                nous donne l'info.
+              </p>
+              <h4>lang=fr</h4>
+              <p>Ce qui permet d'avoir la description en français</p>
+              <p>
+                <span>{weatherData.weather[0].description}</span> est la
+                description de la météo que l'on a récupérer grâce à{" "}
+                <span>"weatherData.weather[0].description"</span> et elle est
+                bien en français. Comme on l'a indiqué au dessus avec{" "}
+                <span>"lang"</span>
+              </p>
+              <h4>appid={apiKey}</h4>
+              <p>Open Weather requière une clé api pour pouvoir être utilisé</p>
               <h4>&</h4>
               <p>Il permet d'ajouter des paramètres supplémentaire</p>
             </div>
+            <h2>Fetch</h2>
+            <h4>const [weatherData, setWeatherData] = useState(null);</h4>
             <p>
-              <span>{weatherData.name}</span> est le nom de la ville que l'on a
-              récupérer avec fetch grâce à <span>"weatherData.name"</span>
+              C'est la constante qui permet de stocker les données et de pouvoir
+              sans servir sur la page
             </p>
             <p>
-              <span>{weatherData.main.temp}°C</span> est la température que l'on
-              a récupérer grâce à <span>"weatherData.main.temp"</span>. <br />{" "}
-              Mais il a fallu que l'on change un paramètre dans le lien vers
-              l'api pour avoir la bonne formulation et des celsius. <br />
-              Comme indiqué au-dessus avec <span>"units"</span> <br />
-              Pour cela la
-              <a href="https://openweathermap.org/api/one-call-3"> doc</a>, nous
-              donne l'info.
+              <span>weatherData & setWeatherData</span> sont deux variables qui
+              permettent de stocker des données grâce à{" "}
+              <span>"useState()"</span>. Leurs noms n'a pas d'importance si ce
+              n'est représenter ce qu'elles contiennent
             </p>
+            <h4>setWeatherData</h4>
+            <p>Elle va être utilisé pour récuper les données de l'API</p>
+            <h4>weatherData</h4>
             <p>
-              <span>{weatherData.weather[0].description}</span> est la
-              description de la météo que l'on a récupérer grâce à{" "}
-              <span>"weatherData.weather[0].description"</span> et elle est bien
-              en français. Comme on l'a indiqué au dessus avec{" "}
-              <span>"lang"</span>
+              Elle va servir à lire les données et les affichés à l'endroit
+              souhaité. <br />
+              Par exemple, <span>"weatherData.name"</span> qui permet de
+              récupérer le nom de la ville ici <span>{weatherData.name}</span>
+            </p>
+            <h4>Fetch(url)</h4>
+            <p>
+              Fetch va utilisé l'adresse entre parenthèse pour envoyer une
+              demande de données. <br />
+              Cette demande va être reçu sous forme de <span>
+                "promise"
+              </span>{" "}
+              qui va permettre de récupérer les données et de les envoyé vers un
+              fichier json. <br />
+              C'est le rôle de <span>"response"</span>A partir de là, on peut
+              lire les données du fichier grâce à <span>"data"</span> qui sera
+              du coup enregistrer dans <span>"setWeatherData"</span> pour être
+              lu par <span>"weatherData"</span>
             </p>
           </article>
           <article className="cardWeather">
